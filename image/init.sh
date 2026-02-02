@@ -41,4 +41,4 @@ if [ ! -f "/root/.openclaw/openclaw.json" ]; then
 fi
 
 echo "Starting openclaw gateway..."
-exec /usr/bin/openclaw gateway
+/usr/bin/openclaw gateway

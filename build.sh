@@ -43,7 +43,7 @@ docker run --rm \
     -v ./host_init.sh:/host_init.sh:ro \
     --entrypoint /opt/bake/bake.$LOCALARCH \
     --platform linux/amd64 \
-    ghcr.io/losfair/bake:sha-1d6c33b \
+    ghcr.io/losfair/bake:sha-42fbc25 \
     --input /opt/bake/bake.$TARGETARCH \
     --entrypoint /init.sh \
     --firecracker /opt/bake/firecracker.$TARGETARCH \

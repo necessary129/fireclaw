@@ -96,4 +96,4 @@ if [ -n "$DISK_PATH" ]; then
 fi
 
 export BAKE_RUN_VM=1
-exec "$BAKE_EXE" "${BAKE_ARGS[@]}" --cpus "$CPUS" --memory "$MEMORY_MB" "${DISK_MOUNT_ARGS[@]}" "${PASSTHROUGH_ARGS[@]}"
+exec -a fireclaw "$BAKE_EXE" "${BAKE_ARGS[@]}" --cpus "$CPUS" --memory "$MEMORY_MB" "${DISK_MOUNT_ARGS[@]}" "${PASSTHROUGH_ARGS[@]}"
