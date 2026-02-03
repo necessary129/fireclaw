@@ -83,6 +83,12 @@ if [ ! -r /dev/kvm ]; then
     fi
 fi
 
+if [ -f /sys/kernel/mm/transparent_hugepage/enabled ]; then
+    if ! grep -q '\[always\]' /sys/kernel/mm/transparent_hugepage/enabled; then
+        echo "⚠️ /sys/kernel/mm/transparent_hugepage/enabled is not set to \"always\". On some machines this can lead to *very* bad performance."
+    fi
+fi
+
 # Handle disk mount
 DISK_MOUNT_ARGS=()
 if [ -n "$DISK_PATH" ]; then
