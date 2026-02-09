@@ -1,0 +1,15 @@
+[Unit]
+Description=OpenClaw AI Gateway
+After=network.target
+
+[Service]
+Type=simple
+ExecStartPre=/bin/bash -c '[ -f /root/.openclaw/openclaw.json ] || /usr/bin/openclaw onboard'
+ExecStart=/usr/bin/openclaw gateway
+Restart=on-failure
+RestartSec=5
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target

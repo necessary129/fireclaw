@@ -22,7 +22,7 @@ else
   exit 1
 fi
 
-tag="$(date -u +%Y%m%d)-$(openssl rand -hex 4)"
+tag="$(date -u +%Y%m%d)-1"
 cd image
 docker build --platform "linux/$TARGETARCH" -t fireclaw-image:$tag .
 cd ..
